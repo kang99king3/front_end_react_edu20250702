@@ -39,7 +39,6 @@ function R04_State() {
     //                         setCount((prev)=>prev+1);
     //                         setCount((prev)=>prev+1);}; 
     
-    
     return (
         <div>
             <p>현재 카운드:{count2}</p>
