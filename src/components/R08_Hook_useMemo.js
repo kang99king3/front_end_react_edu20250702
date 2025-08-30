@@ -39,7 +39,7 @@ const ExpensiveComponent = ({value}) => {
       return <div>비용 큰 계산 결과: {value}</div>
 }
 
-const R08_Hook_memo = () => {
+const R08_Hook_useMemo = () => {
     const[num, setNum] = useState(0);//계산에 사용될 값
     const[other, setOther] = useState(false);
 
@@ -57,7 +57,8 @@ const R08_Hook_memo = () => {
 
     // useCallback(func,[])
     // 함수 memoization을 제공한다. -> 리렌더링되면 함수도 새로 생성됨
-    // 해당 hook을 사용하면 의존배열에 지정한 상태값이 변경될 때만 새로 생성해서 사용
+    // 해당 hook을 사용하면 의존성 배열에 지정한 상태값이 변경될 때만 새로 생성해서 사용
+    // 자식 컴포넌트에 props로 넘길 때 유용함
     const handleClick=useCallback( () => {
         setNum((prev)=>prev+1);
     },[setNum]);
@@ -87,4 +88,4 @@ const R08_Hook_memo = () => {
     );
 };
 
-export default R08_Hook_memo;
+export default R08_Hook_useMemo;
