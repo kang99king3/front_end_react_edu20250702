@@ -3,6 +3,9 @@ import R01_JSXBasic from './components/R01_JSXBasic';
 import R02_Component, { R02_ComponentClass } from './components/R02_Component';
 import R03_Props from './components/R03_Props';
 import R04_State from './components/R04_State';
+import R05_Event from './components/R05_Event';
+import R06_Ref from './components/R06_Ref';
+import R07_Hook_Effect from './components/R07_Hook_Effect';
 
 function App() {
 
@@ -34,8 +37,22 @@ function App() {
 
       <section style={sectionStyle}>
         <h1>4. State</h1>
-        {/*문자열은 "", 숫자,bool등은 {}사용. 안그럼 문자열로 넘어감 */}
         <R04_State />
+      </section>
+
+      <section style={sectionStyle}>
+        <h1>5. Event</h1>
+        <R05_Event />
+      </section>
+
+      <section style={sectionStyle}>
+        <h1>6. Ref</h1>
+        <R06_Ref />
+      </section>
+
+      <section style={sectionStyle}>
+        <h1>7. Hook useEffect</h1>
+        <R07_Hook_Effect/>
       </section>
     </div>
   );
