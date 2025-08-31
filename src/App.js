@@ -66,6 +66,11 @@ function App() {
         <h1>9. Hook useCallback</h1>
         <R09_Hook_useCallback />
       </section>
+
+      <section style={sectionStyle}>
+        <h1>10. Redux</h1>
+     
+      </section>
     </div>
   );
 }

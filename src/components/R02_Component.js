@@ -14,8 +14,6 @@ function R02_Component() {
 }
 
 //클래스형 컴포넌트: Componet객체를 상속받아 구현한다. 레거시방식
-
-
 class R02_ComponentClass extends Component {
     render() {
         return (

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { Component, useState } from 'react';
 
 // state는 컴포넌트 내부에서 바뀌는 데이터를 의미한다.
 //   - useState hook을 사용해서 상태 변수와 상태 변경 함수를 얻을 수 있다.
@@ -52,4 +52,32 @@ function R04_State() {
     );
 }
 
+//클래스형 컴포넌트에서 state,props 사용
+class R04_State_Class extends Component {
+
+    //클래스형 컴포넌트에서 state 선언 방법 
+    constructor(props){
+        super(props);// 문법처럼 항상 선언해줘야 함
+        this.state={
+            number:0
+        };
+    }
+    // 보통 이방법을 더 많이 사용한다. 
+    // state={
+    //     number:0
+    // }
+
+    render() {
+        return (
+            <div>
+                <h2>클래스형:state</h2>
+                <input name="count" readOnly value={this.state.number} />
+                {/* <button onClick={()=>{this.state.number+=1}}>클릭</button> */}
+                <button onClick={()=>{this.setState({number:this.state.number+1})}}>클릭</button>
+            </div>
+        );
+    }
+}
+
 export default R04_State;
+export {R04_State_Class};

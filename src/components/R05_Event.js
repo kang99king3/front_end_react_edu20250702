@@ -4,14 +4,12 @@ import React, { useState } from 'react';
 //   - value를 state로 관리하고, onChange에서 state를 업데이트함
 //   - 이 패턴으로 입력값을 제어 및 관리한다.
 
-
-
 // state로 관리하는 이유
 //  - React철학(단방향 데이터 흐름, Single Source of Truth:데이터를 신뢰할 수 있는 하나의 출처 규칙)
 //  - 입력값을 다른 로직에서 활용하거나 전달하기 편함
 //  - 리렌더링 시에도 입력값이 일관되게 유지됨
 const R05_Event = () => {
-    
+
     const [text, setText] = useState("");
 
     //e.target: 해당 이벤트가 발생한 요소
