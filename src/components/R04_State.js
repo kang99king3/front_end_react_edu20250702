@@ -6,7 +6,7 @@ import React, { useState } from 'react';
 function R04_State() {
     // count2 변수의 값을 1씩증가시켜서 렌더링시킨다.
     // 하지만 리렌더링되지 않기 때문에 브라우저에는 변경되는 값이 반영되지 않는다
-    //-> 리렌더링 되는 경우 1.state 변경 시 2.props 변경 시 3.부모컴포넌트 리렌더링 시
+    //-> 리렌더링 되는 경우 1.state 변경 시 2.props 변경 시 3.부모컴포넌트 리렌더링 시(변경사항 판단후 리렌더링)
     let count2=0;
     const increase2=()=>{
         count2++;

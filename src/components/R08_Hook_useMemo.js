@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useMemo, useState } from 'react';
+import React, { useCallback, useMemo, useState } from 'react';
 
 // useMemo는 계산결과값 재생성 방지, useCallback은 함수 재생성 방지
 

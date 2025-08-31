@@ -6,7 +6,8 @@ import R04_State from './components/R04_State';
 import R05_Event from './components/R05_Event';
 import R06_Ref from './components/R06_Ref';
 import R07_Hook_Effect from './components/R07_Hook_Effect';
-import R08_Hook_memo from './components/R08_Hook_useMemo';
+import R08_Hook_useMemo from './components/R08_Hook_useMemo';
+import R09_Hook_useCallback from './components/R09_Hook_useCallback';
 
 function App() {
 
@@ -47,7 +48,7 @@ function App() {
       </section>
 
       <section style={sectionStyle}>
-        <h1>6. Ref</h1>
+        <h1>6. Hook useRef</h1>
         <R06_Ref />
       </section>
 
@@ -58,7 +59,12 @@ function App() {
 
       <section style={sectionStyle}>
         <h1>8. Hook useMemo</h1>
-        <R08_Hook_useMemo/>
+        <R08_Hook_useMemo />
+      </section>
+
+      <section style={sectionStyle}>
+        <h1>9. Hook useCallback</h1>
+        <R09_Hook_useCallback />
       </section>
     </div>
   );
