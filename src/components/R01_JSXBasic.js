@@ -13,7 +13,7 @@ function R01_JSXBasic() {
     const upper = (s) => s.toUpperCase(); 
 
     // CSS 인라인 방식으로 정의할 경우 객체로 작성한다.
-    const highlight = {color:"blue", fontweight:"bold"};
+    const highlight = {color:"blue", fontWeight:"bold"};
 
     return (
         // JSX는 최상위에 하나의 부모요소(div)를 둬야 한다.

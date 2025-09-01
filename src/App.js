@@ -8,6 +8,7 @@ import R06_Ref from './components/R06_Ref';
 import R07_Hook_Effect from './components/R07_Hook_Effect';
 import R08_Hook_useMemo from './components/R08_Hook_useMemo';
 import R09_Hook_useCallback from './components/R09_Hook_useCallback';
+import R10_Redux_Counter from './components/R10_Redux_Counter';
 
 function App() {
 
@@ -69,7 +70,7 @@ function App() {
 
       <section style={sectionStyle}>
         <h1>10. Redux</h1>
-     
+        <R10_Redux_Counter />
       </section>
     </div>
   );

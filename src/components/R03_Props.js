@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 //props는 부모 컴포넌트가 자식 컴포넌트에게 전달하는 데이터
 //  - props는 읽기 전용으로 자식이 직접 수정하지 못한다.
