@@ -5,6 +5,7 @@ import React, { Component } from 'react';
 //  - 구조 분해 할당을 사용하면 가독성에 좋음
 function R03_Props({name, age}) {
     //R03_Props(props)으로 받고 출력은 {props.name},{props.age} 한다.
+
     // 전달받은 name과 age를 화면에 출력한다.
     // JSX 안에서 텍스트와 변수를 조합하여 사용할 수 있다.
     return (
@@ -12,6 +13,19 @@ function R03_Props({name, age}) {
             <p>안녕하세요, <strong>{name}</strong> ({age}세) 님!!</p>
         </div>
     );
+}
+
+function R03_Props2(props){ 
+    const {name, age} = props;
+    return (
+        <div>{name}, {age}</div>
+    )
+}
+
+function R03_Props3(props){ 
+    return(
+        <div>{props.name}, {props.age}</div>
+    )
 }
 
 //클래스형 컴포넌트

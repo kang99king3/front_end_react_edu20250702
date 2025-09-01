@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
 //JSX는 javascript + XML 문법
 // - 반드시 하나의 부모 요소로 감싸야 한다.
@@ -9,6 +9,7 @@ function R01_JSXBasic() {
 
     const name ="hong";
     const isStudent=true;
+    const notAStudent=true;
     const score = 87;
     const upper = (s) => s.toUpperCase(); 
 
@@ -24,11 +25,18 @@ function R01_JSXBasic() {
         <div>
             <p>안녕하세요, {name}님!!</p>
             <p>{isStudent?"학생입니다":"학생이 아닙니다"}</p>
+            <p>{notAStudent&&"학생이 아닙니다."}</p>
             <p>대문자 이름: {upper(name)}</p>
             <p>점수:{score}점, 다음 시험 목표:{score + 10}점</p>
             <p style={highlight}>이 문장은 노란색, 굵게 표시됩니다.</p>
             <button onClick={()=>alert("버튼 클릭!")}>클릭</button>
         </div>
+        // <Fragment>
+        //     <h1>Fragment사용하기</h1>
+        // </Fragment>
+        // <>
+        //     <h1>빈요소 사용하기</h1>
+        // </>
     );
 }
 

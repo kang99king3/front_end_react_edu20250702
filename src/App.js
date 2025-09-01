@@ -3,8 +3,9 @@ import R01_JSXBasic from './components/R01_JSXBasic';
 import R02_Component, { R02_ComponentClass } from './components/R02_Component';
 import R03_Props from './components/R03_Props';
 import R04_State from './components/R04_State';
+import MovieList from './components/R05_2_Loop_Component';
 import R05_Event from './components/R05_Event';
-import R06_Ref from './components/R06_Ref';
+import R06_Ref from './components/R06_Hook_useRef';
 import R07_Hook_Effect from './components/R07_Hook_Effect';
 import R08_Hook_useMemo from './components/R08_Hook_useMemo';
 import R09_Hook_useCallback from './components/R09_Hook_useCallback';
@@ -46,6 +47,11 @@ function App() {
       <section style={sectionStyle}>
         <h1>5. Event</h1>
         <R05_Event />
+      </section>
+
+      <section style={sectionStyle}>
+        <h1>6. Loop Component</h1>
+        <MovieList/>
       </section>
 
       <section style={sectionStyle}>
