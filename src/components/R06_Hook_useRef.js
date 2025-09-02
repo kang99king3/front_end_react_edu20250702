@@ -31,6 +31,23 @@ const R06_Ref = () => {
             alert(`현재 입력값:${inputRef.current.value}`);
         }
     }
+
+    // 값 저장에 활용 가능
+    //  - 리렌더링 없이 값을 변경
+    //  - 리렌더링 되도 값 유지 
+    const valueRef=useRef(0);
+    const [num, setNum]=useState(0);
+    let count=0;
+
+    const updateValue=()=>{
+        valueRef.current+=1;
+        console.log("ref:",valueRef.current);
+    }
+    const updateValue2=()=>{
+        count++;
+        console.log("일반:",count);
+    }
+
     return (
         <div>
             {/* ref 속성으로 dom에 참조를 연결한다. */}
@@ -41,6 +58,13 @@ const R06_Ref = () => {
                 <button onClick={focusInput}>포커스 주기</button>
                 <button onClick={fillValue}>값 자동 입력</button>
                 <button onClick={readValue}>현재 값 읽기</button>
+                <hr/>
+                <h2>값저장</h2>
+                <span>{valueRef.current}</span>
+                <button onClick={updateValue}>값변경(ref)</button>
+                <button onClick={updateValue2}>값변경(일반)</button>
+                <span>{num}</span>
+                <button onClick={()=>{setNum(num+1)}}>값변경(state)</button>
             </div>
         </div>
         
