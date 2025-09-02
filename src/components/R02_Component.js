@@ -32,7 +32,7 @@ class R02_ComponentClass extends Component {
 }
 
 //export는 다른 객체에서 사용할 수 있도록 설정하는 방식이다.
-// default는 기본으로 반드시 작성
+// default는 기본으로 반드시 작성-> 기본이기 때문에 import시 꼭 이름을 일치시키지 않아도 됨
 export default R02_Component;
 // 여러 컴포넌트를 추가할 수 있다. 
 export {R02_ComponentClass};
