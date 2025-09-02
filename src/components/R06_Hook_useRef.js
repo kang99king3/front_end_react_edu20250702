@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 
 // ref는 특정 DOM 요소나 자식 컴포넌트를 직접 참조하고 싶을 때 사용함
 //   - 주로 포커스 제어, 스크롤 제어, 비제어 input값 읽기 등에 활용
@@ -54,7 +54,7 @@ const R06_Ref = () => {
             <input ref={inputRef} type="text" placeholder='ref테스트용 입력창'/>
 
             {/* ref로 DOM을 직접 제어하는 예시들 */}
-            <div style={{display:'flex',gap:8,marginTop:8}}>
+            <div>
                 <button onClick={focusInput}>포커스 주기</button>
                 <button onClick={fillValue}>값 자동 입력</button>
                 <button onClick={readValue}>현재 값 읽기</button>

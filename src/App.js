@@ -4,6 +4,7 @@ import R02_Component, { R02_ComponentClass } from './components/R02_Component';
 import R03_Props from './components/R03_Props';
 import R04_State from './components/R04_State';
 import MovieList from './components/R05_2_Loop_Component';
+import FormDateObj from './components/R05_3_form';
 import R05_Event from './components/R05_Event';
 import R06_Ref from './components/R06_Hook_useRef';
 import R07_Hook_Effect from './components/R07_Hook_Effect';
@@ -48,9 +49,12 @@ function App() {
         <h1>5. Event</h1>
         <R05_Event />
       </section>
-
       <section style={sectionStyle}>
-        <h1>6. Loop Component</h1>
+        <h1>5. Form</h1>
+        <FormDateObj />
+      </section>
+      <section style={sectionStyle}>
+        <h1>5. Loop Component</h1>
         <MovieList/>
       </section>
 
@@ -58,7 +62,7 @@ function App() {
         <h1>6. Hook useRef</h1>
         <R06_Ref />
       </section>
-
+      
       <section style={sectionStyle}>
         <h1>7. Hook useEffect</h1>
         <R07_Hook_Effect/>

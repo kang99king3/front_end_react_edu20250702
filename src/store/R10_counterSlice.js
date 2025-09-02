@@ -18,6 +18,11 @@ const counterSlice = createSlice({
   }
 });
 
+// counterSlice 객체 안에는 여러 가지가 들어 있음
+// counterSlice.reducer   → 리듀서 함수
+// counterSlice.actions   → { increment, decrement } 액션 생성 함수들
+// counterSlice.name      → "counter"
+
 // 액션과 리듀서를 export
 export const { increment, decrement, reset } = counterSlice.actions;
-export default counterSlice.reducer;
+export default counterSlice.reducer; // 이걸 내보내면 reducer 역할을 함
