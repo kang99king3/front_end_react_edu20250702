@@ -39,13 +39,22 @@ const R06_Ref = () => {
     const [num, setNum]=useState(0);
     let count=0;
 
-    const updateValue=()=>{
+    //useRef 값 변경
+    const updateRefValue=()=>{
         valueRef.current+=1;
         console.log("ref:",valueRef.current);
     }
-    const updateValue2=()=>{
+    //일반변수 값 변경
+    const updateValue=()=>{
         count++;
         console.log("일반:",count);
+    }
+    //State 값 변경
+    const updateStateValue=()=>{
+        setNum((prev)=>prev+1);
+        console.log("State:",num);
+        //콘솔에 0부터 출력되는 이유는 state가 바로 실행되는것이 아니라
+        //한번에 모아서 렌더링될때 실행되기 때문에 콘솔이 실행될때에는 아직 num의 값이 0이다
     }
 
     return (
@@ -58,13 +67,14 @@ const R06_Ref = () => {
                 <button onClick={focusInput}>포커스 주기</button>
                 <button onClick={fillValue}>값 자동 입력</button>
                 <button onClick={readValue}>현재 값 읽기</button>
-                <hr/>
-                <h2>값저장</h2>
+            </div>
+            <div>
+                <h2>값저장에 사용</h2>
                 <span>{valueRef.current}</span>
-                <button onClick={updateValue}>값변경(ref)</button>
-                <button onClick={updateValue2}>값변경(일반)</button>
+                <button onClick={updateRefValue}>값변경(ref)</button>
+                <button onClick={updateValue}>값변경(일반)</button>
                 <span>{num}</span>
-                <button onClick={()=>{setNum(num+1)}}>값변경(state)</button>
+                <button onClick={updateStateValue}>값변경(state)</button>
             </div>
         </div>
         

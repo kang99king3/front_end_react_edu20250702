@@ -1,6 +1,8 @@
 import React, { useCallback, useState } from 'react';
 
 // 자식 컴포넌트
+// - memo함수로 처리: 부모컴포넌트가 리렌더링되더라도 
+//   props가 변경되지 않으면 자식컴포넌트는 리렌더링 안되도록 처리
 // props로 받은 onClick 함수를 버튼 클릭 시 실행
 const ChildButton = React.memo(({ onClick }) => {
     console.log("자식 컴포넌트 렌더링됨");
@@ -18,7 +20,7 @@ const R09_Hook_useCallback = () => {
     // 성능 최적화 : 부모 컴포넌트에서 state가 자주 바뀌는데, 자식은 꼭 다시 렌더링될 필요가 없을 때 효과가 크다.
     const handleClick = useCallback(() => {
         alert("자식 버튼 클릭됨!");
-    }, []);
+    }, []);// 의존성 배열 []을 비어두면 처음에 한번 생성되고 더이상 생성되지 않음
 
     //일반 함수를 사용하면 자식 컴포넌트로 전달할때마다 새로 생성된 함수가 전달되기 때문에 
     //props가 변경되므로 자식 컴포넌트는 리렌더링 된다.
@@ -37,10 +39,11 @@ const R09_Hook_useCallback = () => {
                 type="text"
                 placeholder="부모 state 변경"
                 value={text}
-                onChange={(e) => setText(e.target.value)}
+                onChange={(e) =>setText(e.target.value)}
             />
 
-            {/* 자식에게 콜백을 props로 전달 */}
+            {/* 자식에게 콜백을 props로 전달한다. 
+            이때 부모가 리렌더링되면 함수를 새로 생성해서 전달한다. 즉 props가 변경됨 */}
             <ChildButton onClick={handleClick2} />
         </div>
     );

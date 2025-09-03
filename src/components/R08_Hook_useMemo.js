@@ -14,22 +14,23 @@ const MemoTest = () => {
     const memoTest1=(n)=>{
         return n*n;
     }
-    console.log(memoTest1(5)); 
-    console.log(memoTest1(5));
+    console.log(memoTest1(5));//연산하여 결과반환:25
+    console.log(memoTest1(5));//다시 연산하여 결과반환:25
 
+    //useMemo 개념 확인
     //같은 값이 입력되면 계산하지 않고 이전에 저장해둔 결과를 사용한다.
     const memo={};
 
     const memoTest2=(n)=>{
         if(memo[n]!==undefined){//키에 대한 값이 정의되어 있다면
-            return memo[n];
+            return memo[n];//동일한 값이 있으므로 저장된 값 반환
         }
         //처음 계산이면 결과 저장 
         memo[n]=n*n;
         return memo[n];
     }
-    console.log("memo구현:",memoTest2(5)); 
-    console.log("memo구현:",memoTest2(5));
+    console.log("memo구현:",memoTest2(5));//계산후 결과값반환 
+    console.log("memo구현:",memoTest2(5));//저장된 값 반환
     return (
         <div>메모테스트</div>
     );
