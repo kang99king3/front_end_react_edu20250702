@@ -42,10 +42,13 @@ const ExpensiveComponent = ({value}) => {
 
 const R08_Hook_useMemo = () => {
     const[num, setNum] = useState(0);//계산에 사용될 값
+    //other의 값을 변경했을 때 리렌더링이 발생한다.
+    //-> useMemo에 정의된 expensiveCalculation함수는 실행되지 않고, 이전 값을 재사용한다.
     const[other, setOther] = useState(false);
 
     //복잡한 계산을 하는 함수
     const expensiveCalculation = (n) => {
+        console.log("계산결과 다시 구함");
         let total = 0;
         for(let i = 0;i < 5000000;i++){
             total += i%(n+1);
@@ -54,12 +57,17 @@ const R08_Hook_useMemo = () => {
     }
 
     // useMemo를 이용하여 계산 기능을 설정하면 num의 값이 변경될때만 실행함
+    //  -> other값이 변경되도 num의 값이 변경되지 않는 한 이전 계산값을 재사용한다.
     const memoizedValue=useMemo(()=>expensiveCalculation(num),[num]);
+    
+    //other값이 변경되면 계산이 실행됨 -> 결과값이 같아도 렌더링 되면서 불필요하게 실행하게 된다.
+    //const memoizedValue2=expensiveCalculation(num);
 
     // useCallback(func,[])
     // 함수 memoization을 제공한다. -> 리렌더링되면 함수도 새로 생성됨
     // 해당 hook을 사용하면 의존성 배열에 지정한 상태값이 변경될 때만 새로 생성해서 사용
     // 자식 컴포넌트에 props로 넘길 때 유용함
+    // ->여기서는 크게 효과는 없음(그냥 보여주기 위해 적용해봄)
     const handleClick=useCallback( () => {
         setNum((prev)=>prev+1);
     },[setNum]);
